@@ -1,0 +1,42 @@
+.products-container {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+    margin-bottom: 30px;
+}
+
+.product-card {
+    width: 220px;
+    text-align: center;
+    padding: 10px;
+}
+
+.product-image {
+    height: 120px;
+    object-fit: cover;
+    width: 100%;
+}
+
+.product-heading {
+    font-size: 16px;
+    color: #2E7D32;
+    font-weight: 500;
+}
+
+.product-overview {
+    font-size: 12px;
+    color: #2E7D32;
+    font-weight: 200;
+}
+
+.view-more-btn {
+    border: none;
+}
+
+.section-heading {
+    margin-left: 16px;
+    margin-bottom: 12px;
+    margin-top: 12px;
+    font-weight: 700;
+}

@@ -1,0 +1,34 @@
+.mat-toolbar {
+    background-color: cornflowerblue;
+    color: white;
+}
+
+.mat-button {
+    color: white;
+}
+
+.spacer {
+    flex: 1 1 auto;
+}
+
+.navbar-content {
+    display: flex;
+    align-items: center;
+    margin-left: 6px;
+    margin-right: 3px;
+    font-size: small;
+    color: #cdf6cd;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.navbar-icon {
+    color: #055c05;
+    cursor: pointer;
+}
+
+.heading {
+    color: #09122C;
+    font-weight: bolder;
+    font-size: larger;
+}
