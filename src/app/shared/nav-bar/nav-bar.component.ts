@@ -21,4 +21,14 @@ export class NavBarComponent {
   navigateToHome() {
     this.router.navigate(['/homepage']);
   }
+
+  navigateToOrders() {
+    this.router.navigate(['/orders']);
+  }
+  navigateToCart() {
+    this.router.navigate(['/cart']);
+  }
+  navigateToAboutUs() {
+    this.router.navigate(['/about-us']);
+  }
 }

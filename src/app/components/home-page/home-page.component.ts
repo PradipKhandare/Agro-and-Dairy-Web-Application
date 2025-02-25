@@ -4,7 +4,8 @@ import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatDialog, MatDialogModule } from '@angular/material/dialog';
 import { ContactUsDialogComponent } from '../contact-us-dialog/contact-us-dialog.component';
 import { MatIconModule } from '@angular/material/icon';
-import {  MatTooltipModule } from '@angular/material/tooltip';
+import { MatTooltipModule } from '@angular/material/tooltip';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-home-page',
@@ -15,8 +16,7 @@ import {  MatTooltipModule } from '@angular/material/tooltip';
 })
 export class HomePageComponent {
 
-  constructor(public dialog: MatDialog) { }
-
+  constructor(public dialog: MatDialog, public router: Router) { }
 
   openContactUsDialog() {
     this.dialog.open(ContactUsDialogComponent, {
@@ -24,8 +24,9 @@ export class HomePageComponent {
     });
   }
 
-  openChatBot() {
-
+  navigateToChatBot() {
+    console.log('Navigating to chatbot...');
+    this.router.navigate(['/chatbot']);
   }
 
 }

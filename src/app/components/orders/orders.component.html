@@ -1,0 +1,18 @@
+<div class="orders-container">
+    <h2>Orders</h2>
+
+    <div class="product-list">
+        <div class="product-card" *ngFor="let product of products">
+            <div class="product-icon">
+                <img [src]="product.icon" alt="product icon" />
+            </div>
+            <div class="product-details">
+                <h3>{{ product.name }}</h3>
+                <p>{{ product.description }}</p>
+            </div>
+            <div class="order-action">
+                <button (click)="orderStatus(product)" class="order-btn">{{product.status}}</button>
+            </div>
+        </div>
+    </div>
+</div>

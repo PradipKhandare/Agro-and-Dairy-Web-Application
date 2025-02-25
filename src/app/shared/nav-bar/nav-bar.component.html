@@ -8,13 +8,13 @@
         <mat-icon class="navbar-icon" aria-hidden="false" aria-label="Products" fontIcon="shopping_basket"></mat-icon>
         Products
     </a>
-    <a mat-button class="navbar-content">
+    <a mat-button (click)="navigateToOrders()" class="navbar-content">
         <mat-icon class="navbar-icon" aria-hidden="false" aria-label="Orders" fontIcon="receipt_long"></mat-icon> Orders
     </a>
-    <a mat-button class="navbar-content">
+    <a mat-button (click)="navigateToCart()" class="navbar-content">
         <mat-icon class="navbar-icon" aria-hidden="false" aria-label="Cart" fontIcon="shopping_cart"></mat-icon> Cart
     </a>
-    <a mat-button class="navbar-content">
+    <a mat-button (click)="navigateToAboutUs()" class="navbar-content">
         <mat-icon class="navbar-icon" aria-hidden="false" aria-label="About Us" fontIcon="info"></mat-icon> About Us
     </a>
     <a mat-button class="navbar-content">

@@ -1,0 +1,14 @@
+<div class="chat-container">
+    <h2 class="bot-heading">FarmMate</h2>
+    <div class="chat-box">
+        <div *ngFor="let message of messages">
+            <div class="message" [ngClass]="{'user': message.sender === 'user', 'bot': message.sender === 'bot'}">
+                <p>{{ message.text }}</p>
+            </div>
+        </div>
+    </div>
+    <div class="input-container">
+        <input type="text" [(ngModel)]="userInput" placeholder="Ask anything..." />
+        <button (click)="sendMessage()">Send</button>
+    </div>
+</div>
