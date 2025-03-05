@@ -1,0 +1,34 @@
+<div class="product-list">
+    <div class="product-card" *ngFor="let product of products">
+        <div class="discount-badge">{{ product.discount }}% OFF</div>
+        <div class="favorite-icon" (click)="toggleFavorite(product)">
+            <i class="material-icons" [ngClass]="{ 'favorite': product.favorite }">favorite</i>
+        </div>
+
+        <img [src]="product.image" alt="{{ product.name }}">
+
+        <!-- Product Details -->
+        <h3 class="product-name">{{ product.name }}</h3>
+        <p class="brand-name">{{ product.brand }}</p>
+
+        <div class="price-section">
+            <span class="price">₹{{ product.price }}</span>
+            <span class="original-price">₹{{ product.originalPrice }}</span>
+        </div>
+
+        <div class="savings">
+            <i class="material-icons discount-icon">percent</i>
+            Save ₹{{ product.originalPrice - product.price }}
+        </div>
+
+        <div class="size-cart">
+            <div class="size-dropdown">
+                <label for="size">Size</label>
+                <select id="size">
+                    <option *ngFor="let size of product.sizes">{{ size }}</option>
+                </select>
+            </div>
+            <button class="add-to-cart" (click)="addToCart(product)">Add to Cart</button>
+        </div>
+    </div>
+</div>

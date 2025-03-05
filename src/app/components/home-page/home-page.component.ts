@@ -24,9 +24,4 @@ export class HomePageComponent {
     });
   }
 
-  navigateToChatBot() {
-    console.log('Navigating to chatbot...');
-    this.router.navigate(['/chatbot']);
-  }
-
 }

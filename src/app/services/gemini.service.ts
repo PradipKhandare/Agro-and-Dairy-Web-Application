@@ -7,12 +7,9 @@ import { Observable } from 'rxjs';
   providedIn: 'root'
 })
 export class GeminiService {
-
-
-  private apiKey = 'AIzaSyC7yWNB2li4SitWcBHu5m62oRaNdmb2K-M'; // Replace with actual API Key
+  private apiKey = 'AIzaSyC7yWNB2li4SitWcBHu5m62oRaNdmb2K-M'; 
 
   private apiUrl = 'https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent';
-
 
   constructor(public http: HttpClient) { }
 
