@@ -1,6 +1,6 @@
 import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
-import { Router, RouterOutlet } from '@angular/router';
+import { NavigationEnd, Router, RouterOutlet } from '@angular/router';
 import { NavBarComponent } from "./shared/nav-bar/nav-bar.component";
 import { MatIconModule } from '@angular/material/icon';
 
@@ -13,8 +13,19 @@ import { MatIconModule } from '@angular/material/icon';
 })
 export class AppComponent {
   title = 'tech-management-group';
+  showNavbar: boolean = true;
 
-  constructor(private router: Router) { }
+  constructor(private router: Router) {
+    const noNavbarRoutes = ['/login', '/sign-up', ''];
+    this.showNavbar = !noNavbarRoutes.includes(this.router.url);
+
+    // Subscribe to future route changes
+    this.router.events.subscribe((event) => {
+      if (event instanceof NavigationEnd) {
+        this.showNavbar = !noNavbarRoutes.includes(event.url);
+      }
+    });
+  }
 
   navigateToChatBot() {
     console.log('Navigating to chatbot...');

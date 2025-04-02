@@ -18,4 +18,10 @@ export class ReviewService {
     return this.http.post<any>(url, requestBody);
   }
 
+
+  fetchCustomerReview() {
+    const url = `http://localhost:8080/_Data`;
+    return this.http.get<any>(url);
+  }
+
 }

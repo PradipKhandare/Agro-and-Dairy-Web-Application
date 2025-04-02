@@ -4,7 +4,10 @@
     </h2>
 
     <button mat-raised-button (click)="openContactUsDialog()" class="review-us-button"
-        matTooltip="Give Your Feedback">Tell Us What You Think!!</button>
+        matTooltip="We value your feedback! Click to share your thoughts.">
+        Share Your Thoughts!
+    </button>
+
 </div>
 <div class="card-container">
     <mat-card class="example-card" appearance="outlined">
@@ -43,34 +46,16 @@
             <p class="owner-name-message"> - Kaushalya Khandare</p>
         </mat-card-content>
     </mat-card>
+
 </div>
 
 
 <h4 class="review-section-heading">💬 What Our Customers Say</h4>
-
-<div class="testimonial-container">
-    <mat-card class="testimonial-card">
-        <p class="customer-review">"The milk from Khandare's Dairy is so pure and fresh. Highly recommended!"</p>
-        <h6 class="customer-name">- Sunil Patil</h6>
-    </mat-card>
-
-    <mat-card class="testimonial-card">
-        <p class="customer-review">"Their bottled water is of great quality, and the pricing is affordable!"</p>
-        <h6 class="customer-name">- Priya Sharma</h6>
-    </mat-card>
-
-    <mat-card class="testimonial-card">
-        <p class="customer-review"> "I regularly buy fresh vegetables from them. The quality is top-notch!"</p>
-        <h6 class="customer-name">- Ankit Deshmukh</h6>
-    </mat-card>
-
-    <mat-card class="testimonial-card">
-        <p class="customer-review">"The plants from Khandare's farm are vibrant and healthy!"</p>
-        <h6 class="customer-name">- Rina Joshi</h6>
-    </mat-card>
-
-    <mat-card class="testimonial-card">
-        <p class="customer-review">"Excellent service and fresh produce every time!"</p>
-        <h6 class="customer-name">- Rajesh Mehta</h6>
-    </mat-card>
+<div class="testimonial-wrapper">
+    <div class="testimonial-container" *ngFor="let customerReview of customersReview">
+        <mat-card class="testimonial-card">
+            <p class="customer-review">{{ customerReview.review }}</p>
+            <h6 class="customer-name">- {{ customerReview.name }}</h6>
+        </mat-card>
+    </div>
 </div>

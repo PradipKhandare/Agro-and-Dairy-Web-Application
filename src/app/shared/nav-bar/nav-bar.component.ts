@@ -31,4 +31,8 @@ export class NavBarComponent {
   navigateToAboutUs() {
     this.router.navigate(['/about-us']);
   }
+
+  navigateToGallery(){
+    this.router.navigate(['/gallery']);
+  }
 }

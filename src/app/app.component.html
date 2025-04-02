@@ -1,8 +1,10 @@
-<app-nav-bar></app-nav-bar>
+<div *ngIf="showNavbar">
+    <app-nav-bar></app-nav-bar>
+</div>
 
 <button mat-icon-button (click)="navigateToChatBot()" class="chat-icon-button"
-        matTooltip="Ask anything, we're here to help!">
-        <mat-icon>chat</mat-icon>
-    </button>
+    matTooltip="Ask anything, we're here to help!">
+    <mat-icon>chat</mat-icon>
+</button>
 
 <router-outlet></router-outlet>
