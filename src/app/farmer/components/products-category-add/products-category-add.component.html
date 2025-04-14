@@ -1,0 +1,36 @@
+<div class="product-form">
+  <form (ngSubmit)="submitProductGroup()" *ngIf="!productGroupSaved">
+    <label for="groupName">Product Group Name</label>
+    <input type="text" id="groupName" [(ngModel)]="productGroupName" name="groupName" required />
+    <button type="submit">Save Product Group</button>
+  </form>
+
+  <div *ngIf="productGroupSaved">
+    <h3>Add Items to: {{ savedGroupName }}</h3>
+
+    <form (ngSubmit)="submitItem()">
+      <label>Item Name</label>
+      <input type="text" [(ngModel)]="newItem.name" name="name" required />
+
+      <label>Info</label>
+      <textarea [(ngModel)]="newItem.info" name="info"></textarea>
+
+      <label>Price Before Discount</label>
+      <input type="number" [(ngModel)]="newItem.price_before_discount" name="beforeDiscount" required />
+
+      <label>Price After Discount</label>
+      <input type="number" [(ngModel)]="newItem.price_after_discount" name="afterDiscount" required />
+
+      <label>Sizes</label>
+      <div *ngFor="let size of newItem.sizes; let i = index; trackBy: trackByIndex">
+        <input type="text" [(ngModel)]="newItem.sizes[i]" name="size{{i}}" />
+        <button class="remove-size" type="button" (click)="removeSize(i)"
+          *ngIf="newItem.sizes.length > 1">Remove</button>
+      </div>
+
+      <button class="add-size" type="button" (click)="addSize()">+ Add Size</button>
+
+      <button type="submit">Add Item</button>
+    </form>
+  </div>
+</div>

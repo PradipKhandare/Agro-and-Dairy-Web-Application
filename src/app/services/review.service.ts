@@ -14,13 +14,13 @@ export class ReviewService {
       name: customerName,
       review: customerReview
     }
-    const url = `http://localhost:8080/_Data`;
+    const url = `http://localhost:8080/review`;
     return this.http.post<any>(url, requestBody);
   }
 
 
   fetchCustomerReview() {
-    const url = `http://localhost:8080/_Data`;
+    const url = `http://localhost:8080/review`;
     return this.http.get<any>(url);
   }
 

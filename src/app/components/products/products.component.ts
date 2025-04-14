@@ -2,6 +2,7 @@ import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
 import { MatCardModule } from '@angular/material/card';
 import { Router, RouterModule } from '@angular/router';
+import { ProductsService } from '../../services/products.service';
 
 @Component({
   selector: 'app-products',
@@ -13,7 +14,13 @@ import { Router, RouterModule } from '@angular/router';
 export class ProductsComponent {
 
 
-  constructor(public router: Router) { }
+  constructor(public router: Router, private productsService: ProductsService) { }
+
+  ngOnInit(){
+    this.productsService.fetchAllProdcutsCategory().subscribe((response)=>{
+      console.log("response : ", response);
+    })
+  }
 
   navigateToASpecificProductListByCategory() {
     this.router.navigate(['/specific-product']);

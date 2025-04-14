@@ -10,6 +10,8 @@ import { ProductsByCategoryComponent } from '../../components/products-by-catego
 import { GalleryComponent } from '../../components/gallery/gallery.component';
 import { LoginComponent } from '../../components/login/login.component';
 import { SignupComponent } from '../../components/signup/signup.component';
+import { DashboardComponent } from '../../components/dashboard/dashboard.component';
+import { ProductsCategoryAddComponent } from '../../farmer/components/products-category-add/products-category-add.component';
 
 const routes: Routes = [
   { path: 'homepage', component: HomePageComponent },
@@ -22,9 +24,11 @@ const routes: Routes = [
   { path: 'gallery', component: GalleryComponent },
   { path: 'login', component: LoginComponent },
   { path: 'sign-up', component: SignupComponent },
+  { path: 'dashboard', component: DashboardComponent },
   { path: 'specific-product', component: ProductsByCategoryComponent },
-  { path: '', pathMatch: 'full', redirectTo: '/sign-up' },
-  { path: '**', redirectTo: '/sign-up' }
+  { path: 'products-category', component: ProductsCategoryAddComponent },
+  { path: '', pathMatch: 'full', redirectTo: '/dashboard' },
+  { path: '**', redirectTo: '/dashboard' }
 ];
 
 @NgModule({

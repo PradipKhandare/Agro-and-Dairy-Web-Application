@@ -16,7 +16,7 @@ export class AppComponent {
   showNavbar: boolean = true;
 
   constructor(private router: Router) {
-    const noNavbarRoutes = ['/login', '/sign-up', ''];
+    const noNavbarRoutes = ['/login', '/sign-up', '/dashboard', '/products-category'];
     this.showNavbar = !noNavbarRoutes.includes(this.router.url);
 
     // Subscribe to future route changes
@@ -26,6 +26,7 @@ export class AppComponent {
       }
     });
   }
+
 
   navigateToChatBot() {
     console.log('Navigating to chatbot...');
