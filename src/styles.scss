@@ -1,6 +1,6 @@
 // Custom Theming for Angular Material
 // For more information: https://material.angular.io/guide/theming
-@use '@angular/material' as mat;
+@use "@angular/material" as mat;
 // Plus imports for other components in your app.
 
 // Include the common styles for Angular Material. We include this here so that you only
@@ -12,24 +12,34 @@
 // (imported above). For each palette, you can optionally specify a default, lighter, and darker
 // hue. Available color palettes: https://material.io/design/color/
 $tech-management-group-primary: mat.define-palette(mat.$indigo-palette);
-$tech-management-group-accent: mat.define-palette(mat.$pink-palette, A200, A100, A400);
+$tech-management-group-accent: mat.define-palette(
+  mat.$pink-palette,
+  A200,
+  A100,
+  A400
+);
 
 // The warn palette is optional (defaults to red).
 $tech-management-group-warn: mat.define-palette(mat.$red-palette);
 
-$tech-management-group-theme: mat.define-light-theme((color: (primary: $tech-management-group-primary,
-        accent: $tech-management-group-accent,
-        warn: $tech-management-group-warn,
-      ),
-      typography: mat.define-typography-config(),
-      density: 0));
+$tech-management-group-theme: mat.define-light-theme(
+  (
+    color: (
+      primary: $tech-management-group-primary,
+      accent: $tech-management-group-accent,
+      warn: $tech-management-group-warn,
+    ),
+    typography: mat.define-typography-config(),
+    density: 0,
+  )
+);
 
 @include mat.all-component-themes($tech-management-group-theme);
-
 
 html,
 body {
   height: 100%;
+  overflow: auto;
 }
 
 body {
@@ -37,8 +47,7 @@ body {
   font-family: Roboto, "Helvetica Neue", sans-serif;
 }
 
-
-.mat-mdc-card-content>:last-child:not(.mat-mdc-card-footer) {
+.mat-mdc-card-content > :last-child:not(.mat-mdc-card-footer) {
   margin-bottom: 0 !important;
   border: none !important;
   color: green !important;
@@ -46,7 +55,6 @@ body {
   font-size: 10px !important;
   font-weight: 100 !important;
 }
-
 
 ::ng-deep .mat-dialog-container {
   background-color: #2d2d2d;
