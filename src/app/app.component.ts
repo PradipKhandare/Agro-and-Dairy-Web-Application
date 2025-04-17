@@ -19,7 +19,6 @@ export class AppComponent {
     const noNavbarRoutes = ['/login', '/sign-up', '/dashboard', '/products-category'];
     this.showNavbar = !noNavbarRoutes.includes(this.router.url);
 
-    // Subscribe to future route changes
     this.router.events.subscribe((event) => {
       if (event instanceof NavigationEnd) {
         this.showNavbar = !noNavbarRoutes.includes(event.url);

@@ -28,11 +28,11 @@ const routes: Routes = [
   { path: 'specific-product', component: ProductsByCategoryComponent },
   { path: 'products-category', component: ProductsCategoryAddComponent },
   { path: '', pathMatch: 'full', redirectTo: '/dashboard' },
-  { path: '**', redirectTo: '/dashboard' }
+  { path: '**', redirectTo: '/dashboard' },
 ];
 
 @NgModule({
   imports: [RouterModule.forChild(routes)],
-  exports: [RouterModule]
+  exports: [RouterModule],
 })
-export class RoutesRoutingModule { }
+export class RoutesRoutingModule {}
