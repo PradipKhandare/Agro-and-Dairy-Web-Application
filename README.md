@@ -10,9 +10,7 @@
 - 🛒 Place and manage customer orders
 - 👨‍💼 Admin panel to handle product data and orders
 - 🤖 Chatbot integration for farming-related queries (Google Gemini)
-- 🔐 Secure login/logout using Okta Authentication (OIDC + PKCE)
 - 📷 Real images from the farm and dairy for better customer trust
-- 🎬 Reels and Shining Stars section to engage users
 - 🧹 Clean, mobile-responsive, and professional UI
 
 ---
