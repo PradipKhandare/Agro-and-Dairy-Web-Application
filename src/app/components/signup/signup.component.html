@@ -10,10 +10,14 @@
             <h3 class="mb-4 pb-2 pb-md-0 mb-md-5">
               Customer Registration Form
             </h3>
-            <form [formGroup]="registrationForm" (ngSubmit)="onSubmit()">
+            <form
+              [formGroup]="registrationForm"
+              (ngSubmit)="onSubmit()"
+              name="registrationForm"
+            >
               <div class="row">
                 <div class="col-md-6 mb-4">
-                  <div data-mdb-input-init class="form-outline">
+                  <div class="form-outline">
                     <input
                       type="text"
                       id="firstName"
@@ -24,7 +28,7 @@
                   </div>
                 </div>
                 <div class="col-md-6 mb-4">
-                  <div data-mdb-input-init class="form-outline">
+                  <div class="form-outline">
                     <input
                       type="text"
                       id="lastName"
@@ -37,25 +41,19 @@
               </div>
 
               <div class="row">
-                <div class="col-md-6 mb-4 d-flex align-items-center">
-                  <div
-                    data-mdb-input-init
-                    class="form-outline datepicker w-100"
-                  >
+                <div class="col-md-6 mb-4">
+                  <div class="form-outline">
                     <input
-                      type="text"
+                      type="date"
+                      id="birthday"
                       class="form-control form-control-lg"
-                      id="birthdayDate"
                       formControlName="birthday"
                     />
-                    <label for="birthdayDate" class="form-label"
-                      >Birthday</label
-                    >
+                    <label class="form-label" for="birthday">Birthday</label>
                   </div>
                 </div>
                 <div class="col-md-6 mb-4">
                   <h6 class="mb-2 pb-1">Gender:</h6>
-
                   <div class="form-check form-check-inline">
                     <input
                       class="form-check-input"
@@ -63,13 +61,11 @@
                       id="femaleGender"
                       value="Female"
                       formControlName="gender"
-                      checked
                     />
                     <label class="form-check-label" for="femaleGender"
                       >Female</label
                     >
                   </div>
-
                   <div class="form-check form-check-inline">
                     <input
                       class="form-check-input"
@@ -82,7 +78,6 @@
                       >Male</label
                     >
                   </div>
-
                   <div class="form-check form-check-inline">
                     <input
                       class="form-check-input"
@@ -99,19 +94,20 @@
               </div>
 
               <div class="row">
-                <div class="col-md-6 mb-4 pb-2">
-                  <div data-mdb-input-init class="form-outline">
+                <div class="col-md-6 mb-4">
+                  <div class="form-outline">
                     <input
                       type="email"
                       id="emailAddress"
                       class="form-control form-control-lg"
                       formControlName="email"
+                      autocomplete="email"
                     />
                     <label class="form-label" for="emailAddress">Email</label>
                   </div>
                 </div>
-                <div class="col-md-6 mb-4 pb-2">
-                  <div data-mdb-input-init class="form-outline">
+                <div class="col-md-6 mb-4">
+                  <div class="form-outline">
                     <input
                       type="tel"
                       id="phoneNumber"
@@ -123,41 +119,42 @@
                     >
                   </div>
                 </div>
+              </div>
 
-                <div class="col-md-6 mb-4 pb-2">
-                  <div data-mdb-input-init class="form-outline">
+              <div class="row">
+                <div class="col-md-6 mb-4">
+                  <div class="form-outline">
                     <input
                       type="password"
                       id="password"
                       class="form-control form-control-lg"
                       formControlName="password"
+                      autocomplete="old-password"
                     />
-                    <label class="form-label" for="phoneNumber">Password</label>
+                    <label class="form-label" for="password">Password</label>
                   </div>
                 </div>
-
-                <div class="col-md-6 mb-4 pb-2">
-                  <div data-mdb-input-init class="form-outline">
+                <div class="col-md-6 mb-4">
+                  <div class="form-outline">
                     <input
                       type="password"
                       id="confirm-password"
                       class="form-control form-control-lg"
                       formControlName="confirmPassword"
+                      autocomplete="new-password"
                     />
-                    <label class="form-label" for="phoneNumber"
+                    <label class="form-label" for="confirm-password"
                       >Confirm Password</label
                     >
                   </div>
                 </div>
               </div>
-
-              <div class="mt-4 pt-2">
-                <input
-                  data-mdb-ripple-init
-                  class="btn btn-primary btn-lg"
-                  type="submit"
-                  value="Submit"
-                />
+              <div class="row">
+                <div class="mt-4 pt-2">
+                  <button type="submit" class="btn btn-primary btn-lg">
+                    Submit
+                  </button>
+                </div>
               </div>
             </form>
           </div>
