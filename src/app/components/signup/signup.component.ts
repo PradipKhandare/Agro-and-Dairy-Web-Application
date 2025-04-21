@@ -46,8 +46,8 @@ export class SignupComponent {
       this.homeService.signup(formData).subscribe(
         (response: string) => {
           console.log('Response from backend:', response);
-          alert(response); // Display the backend message to the user
-          this.router.navigate(['/login']); // Navigate to the login page
+          alert(response);
+          this.router.navigate(['/login']); 
         },
         (error) => {
           console.error('Error during signup:', error);
@@ -58,5 +58,8 @@ export class SignupComponent {
       console.log('Form is invalid');
       alert('Please fill out the form correctly before submitting.');
     }
+  }
+  onClickLogin() {
+    this.router.navigate(['/login']);
   }
 }
