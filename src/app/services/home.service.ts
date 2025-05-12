@@ -9,7 +9,7 @@ export class HomeService {
   constructor(private http: HttpClient) {}
 
   login(requestBody: any): Observable<any> {
-
+    console.log('RequestBody', requestBody);
     return this.http.post<any>('http://localhost:8080/User/login', requestBody);
   }
 
@@ -24,8 +24,10 @@ export class HomeService {
       password: registrationForm.password,
       confirmPassword: registrationForm.confirmPassword,
     };
-  
-    return this.http.post<any>('http://localhost:8080/User/save', requestBody);
+    console.log('RequestBody', requestBody);
+
+    return this.http.post('http://localhost:8080/User/save', requestBody, {
+      responseType: 'text',
+    });
   }
-  
 }
